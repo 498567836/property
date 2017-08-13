@@ -1,160 +1,192 @@
-<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE HTML>
-<html>
+<?php if (!defined('THINK_PATH')) exit();?><!doctype html>
+<html lang="en">
 <head>
 	<meta charset="UTF-8">
-<title><?php echo C('WEB_SITE_TITLE');?></title>
-<link href="/wwwroot/Public/static/bootstrap/css/bootstrap.css" rel="stylesheet">
-<link href="/wwwroot/Public/static/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
-<link href="/wwwroot/Public/static/bootstrap/css/docs.css" rel="stylesheet">
-<link href="/wwwroot/Public/static/bootstrap/css/onethink.css" rel="stylesheet">
+	<title>首页</title>
+	<meta name="viewport" content="width=device-width,intical-scale=1.0,minimum-scale=1.0,user-scalable=no">
+	<link rel="stylesheet" href="/wwwroot/Public/static/css/style.css" tppabs="http://www.17sucai.com/preview/67626/2016-01-12/wuye/css/style.css">
+	<link rel="stylesheet" type="text/css" href="/wwwroot/Public/static/css/swiper.min.css" tppabs="http://www.17sucai.com/preview/67626/2016-01-12/wuye/css/swiper.min.css" />
+	<!--<link href="/wwwroot/Public/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">-->
 
-<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
-<!--[if lt IE 9]>
-<script src="/wwwroot/Public/static/bootstrap/js/html5shiv.js"></script>
-<![endif]-->
-
-<!--[if lt IE 9]>
-<script type="text/javascript" src="/wwwroot/Public/static/jquery-1.10.2.min.js"></script>
-<![endif]-->
-<!--[if gte IE 9]><!-->
-<script type="text/javascript" src="/wwwroot/Public/static/jquery-2.0.3.min.js"></script>
-<script type="text/javascript" src="/wwwroot/Public/static/bootstrap/js/bootstrap.min.js"></script>
-<!--<![endif]-->
-<!-- 页面header钩子，一般用于加载插件CSS文件和代码 -->
-<?php echo hook('pageHeader');?>
-
+	<script src="/wwwroot/Public/static/js/jquery.js" tppabs="http://www.17sucai.com/preview/67626/2016-01-12/wuye/js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	<script src="/wwwroot/Public/static/js/swiper.min.js" tppabs="http://www.17sucai.com/preview/67626/2016-01-12/wuye/js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
 </head>
 <body>
-	<!-- 头部 -->
-	<!-- 导航条
-================================================== -->
-<div class="navbar navbar-inverse navbar-fixed-top">
-    <div class="navbar-inner">
-        <div class="container">
-            <a class="brand" href="<?php echo U('index/index');?>">OneThink</a>
-            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <div class="nav-collapse collapse">
-                <ul class="nav">
-                    <?php $__NAV__ = M('Channel')->field(true)->where("status=1")->order("sort")->select(); if(is_array($__NAV__)): $i = 0; $__LIST__ = $__NAV__;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$nav): $mod = ($i % 2 );++$i; if(($nav["pid"]) == "0"): ?><li>
-                            <a href="<?php echo (get_nav_url($nav["url"])); ?>" target="<?php if(($nav["target"]) == "1"): ?>_blank<?php else: ?>_self<?php endif; ?>"><?php echo ($nav["title"]); ?></a>
-                        </li><?php endif; endforeach; endif; else: echo "" ;endif; ?>
-                </ul>
-            </div>
-            <div class="nav-collapse collapse pull-right">
-                <?php if(is_login()): ?><ul class="nav" style="margin-right:0">
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="padding-left:0;padding-right:0"><?php echo get_username();?> <b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="<?php echo U('User/profile');?>">修改密码</a></li>
-                                <li><a href="<?php echo U('User/logout');?>">退出</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                <?php else: ?>
-                    <ul class="nav" style="margin-right:0">
-                        <li>
-                            <a href="<?php echo U('User/login');?>">登录</a>
-                        </li>
-                        <li>
-                            <a href="<?php echo U('User/register');?>" style="padding-left:0;padding-right:0">注册</a>
-                        </li>
-                    </ul><?php endif; ?>
-            </div>
-        </div>
-    </div>
+<header id="header">
+	<a href="javascript:history.back(-1)"><img class="headleft" src="/wwwroot/Public/static/images/images/backjt.png" tppabs="http://www.17sucai.com/preview/67626/2016-01-12/wuye/images/backjt.png"></a>
+	<span class="center">生活服务</span>
+	<a href="###" class="rt_searchIcon"><img class="headright" src="/wwwroot/Public/static/images/images/search.png" tppabs="http://www.17sucai.com/preview/67626/2016-01-12/wuye/images/search.png"></a>
+</header>
+<div id="adver">
+	<!-- <img src="/wwwroot/Public/static/images/images/adver.png" alt=""> -->
+	<div id="module_1" class="swiper-container">
+		<div class="swiper-wrapper">
+			<div class="two swiper-slide"><img src="/wwwroot/Public/static/images/images/adver.png" tppabs="http://www.17sucai.com/preview/67626/2016-01-12/wuye/images/adver.png" style="width: 100%; height: 100%;" /></div>
+			<div class="two swiper-slide"><img src="/wwwroot/Public/static/images/images/adver.png" tppabs="http://www.17sucai.com/preview/67626/2016-01-12/wuye/images/adver.png" style="width: 100%; height: 100%;" /></div>
+			<div class="two swiper-slide"><img src="/wwwroot/Public/static/images/images/adver.png" tppabs="http://www.17sucai.com/preview/67626/2016-01-12/wuye/images/adver.png" style="width: 100%; height: 100%;" /></div>
+			<div class="two swiper-slide"><img src="/wwwroot/Public/static/images/images/adver.png" tppabs="http://www.17sucai.com/preview/67626/2016-01-12/wuye/images/adver.png" style="width: 100%; height: 100%;" /></div>
+			<div class="two swiper-slide"><img src="/wwwroot/Public/static/images/images/adver.png" tppabs="http://www.17sucai.com/preview/67626/2016-01-12/wuye/images/adver.png" style="width: 100%; height: 100%;" /></div>
+		</div>
+		<!-- Add Pagination -->
+		<div class="swiper-pagination" style="text-align: right;"></div>
+		<script>
+				var swiper = new Swiper('#module_1.swiper-container', {
+					pagination: '.swiper-pagination',
+					paginationClickable: true,
+					loop: true,
+					loopAdditionalSlides: 0,
+					autoplay: 1000, //可选选项，自动滑动
+					autoplayDisableOnInteraction: false
+				});
+			</script>
+	</div>
 </div>
+<div class="home">
+	<div class="row">
+		<div class="col">
+			<ul>
+		    	<li class="r01 b1"><a href="<?php echo U('/Notice/index');?>">
+					<hgroup>
+						<h2 class="title">社区新闻</h2>
+						<h3 class="small_title">小区通知</h3>
+					</hgroup>
+		    	</a></li>
+		    </ul>
+		</div>
+		<div class="col">
+			<ul>
+		    	<li class="r01 b1"><a href="###">
+						<h3 class="small_title">社区商家</h3>
+		    	</a></li>
+		    </ul>
+		</div>
+	</div>
 
-	<!-- /头部 -->
-	
-	<!-- 主体 -->
-	
-    <header class="jumbotron subhead" id="overview">
-        <div class="container">
-            <h2>源自相同起点，演绎不同精彩！</h2>
-            <p class="lead"></p>
-        </div>
-    </header>
+	<div class="row">
+		<div class="col">
+			<ul>
+		    	<li class="r01 b1"><a href="###">
+					<h3 class="small_title">小区团购</h3>
+		    	</a></li>
+		    </ul>
+		</div>
+		<div class="col">
+			<ul>
+		    	<li class="r01 b1"><a href="###">
+					<h3 class="small_title">周边配套</h3>
+		    	</a></li>
+		    </ul>
+		</div>
+		<div class="col">
+			<ul>
+		    	<li class="r01 b1"><a href="###">
+					<h3 class="small_title">票务中心</h3>
+		    	</a></li>
+		    </ul>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col">
+			<ul>
+		    	<li class="r01 b1"><a href="###">
+					<hgroup>
+						<h2 class="title">便民服务</h2>
+						<h3 class="small_title">方便民众为宗旨</h3>
+					</hgroup>
+		    	</a></li>
+		    </ul>
+		</div>
+		<div class="col">
+			<ul>
+		    	<li class="r01 b1"><a href="###">
+					<h3 class="small_title">房屋租售</h3>
+		    	</a></li>
+		    </ul>
+		</div>
+		<div class="col">
+			<ul>
+		    	<li class="r01 b1"><a href="###">
+					<h3 class="small_title">家政服务</h3>
+		    	</a></li>
+		    </ul>
+		</div>
+		<div class="col">
+			<ul>
+		    	<li class="r01 b1"><a href="<?php echo U('/Repair/add');?>">
+					<h3 class="small_title">在线报修</h3>
+		    	</a></li>
+		    </ul>
+		</div>
+		<div class="col">
+			<ul>
+		    	<li class="r01 b1"><a href="###">
+					<h3 class="small_title">汽车服务</h3>
+		    	</a></li>
+		    </ul>
+		</div>
+	</div>
 
-<div id="main-container" class="container">
-    <div class="row">
-        
-<!-- 左侧 nav
-================================================== -->
-    <div class="span3 bs-docs-sidebar">
-        <ul class="nav nav-list bs-docs-sidenav">
-            <?php echo W('Category/lists', array(1, true));?>
-        </ul>
-    </div>
 
-        
-    <div class="span9">
-        <!-- Contents
-        ================================================== -->
-        <section id="contents">
-            <?php $__CATE__ = D('Category')->getChildrenId(1);$__LIST__ = D('Document')->page(!empty($_GET["p"])?$_GET["p"]:1,10)->lists($__CATE__, '`level` DESC,`id` DESC', 1,true); if(is_array($__LIST__)): $i = 0; $__LIST__ = $__LIST__;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$article): $mod = ($i % 2 );++$i;?><div class="">
-                    <h3><a href="<?php echo U('Article/detail?id='.$article['id']);?>"><?php echo ($article["title"]); ?></a></h3>
-                </div>
-                <div>
-                    <p class="lead"><?php echo ($article["description"]); ?></p>
-                </div>
-                <div>
-                    <span><a href="<?php echo U('Article/detail?id='.$article['id']);?>">查看全文</a></span>
-                    <span class="pull-right">
-                        <span class="author"><?php echo (get_username($article["uid"])); ?></span>
-                        <span>于 <?php echo (date('Y-m-d H:i',$article["create_time"])); ?></span> 发表在 <span>
-                        <a href="<?php echo U('Article/lists?category='.get_category_name($article['category_id']));?>"><?php echo (get_category_title($article["category_id"])); ?></a></span> ( 阅读：<?php echo ($article["view"]); ?> )
-                    </span>
-                </div>
-                <hr/><?php endforeach; endif; else: echo "" ;endif; ?>
-
-        </section>
-    </div>
-
-    </div>
+	<div class="row">
+		<div class="col">
+			<ul>
+		    	<li class="r01 b1"><a href="###">
+					<h3 class="small_title">开锁服务</h3>
+		    	</a></li>
+		    </ul>
+		</div>
+		<div class="col">
+			<ul>
+		    	<li class="r01 b1"><a href="###">
+					<h3 class="small_title">四点半教室</h3>
+		    	</a></li>
+		    </ul>
+		</div>
+		<div class="col">
+			<ul>
+		    	<li class="r01 b1"><a href="###">
+					<h3 class="small_title">除甲醛服务</h3>
+		    	</a></li>
+		    </ul>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col">
+			<ul>
+		    	<li class="r01 b1"><a href="###">
+					<h3 class="small_title">社区食堂</h3>
+		    	</a></li>
+		    </ul>
+		</div>
+		<div class="col">
+			<ul>
+		    	<li class="r01 b1"><a href="###">
+					<hgroup>
+						<h2 class="title">其他服务</h2>
+						<h3 class="small_title">更多服务供您体验</h3>
+					</hgroup>
+		    	</a></li>
+		    </ul>
+		</div>
+	</div>
+	<!--导航部分-->
+	<nav class="navbar navbar-default navbar-fixed-bottom">
+		<div class="container-fluid text-center">
+			<div class="col-xs-3">
+				<p class="navbar-text"><a href="index.html" class="navbar-link">首页</a></p>
+			</div>
+			<div class="col-xs-3">
+				<p class="navbar-text"><a href="fuwu.html" class="navbar-link">服务</a></p>
+			</div>
+			<div class="col-xs-3">
+				<p class="navbar-text"><a href="faxian.html" class="navbar-link">发现</a></p>
+			</div>
+			<div class="col-xs-3">
+				<p class="navbar-text"><a href="my.html" class="navbar-link">我的</a></p>
+			</div>
+		</div>
+	</nav>
+	<!--导航结束-->
 </div>
-
-<script type="text/javascript">
-    $(function(){
-        $(window).resize(function(){
-            $("#main-container").css("min-height", $(window).height() - 343);
-        }).resize();
-    })
-</script>
-	<!-- /主体 -->
-
-	<!-- 底部 -->
-	
-    <!-- 底部
-    ================================================== -->
-    <footer class="footer">
-      <div class="container">
-          <p> 本站由 <strong><a href="http://www.onethink.cn" target="_blank">OneThink</a></strong> 强力驱动</p>
-      </div>
-    </footer>
-
-<script type="text/javascript">
-(function(){
-	var ThinkPHP = window.Think = {
-		"ROOT"   : "/wwwroot", //当前网站地址
-		"APP"    : "/wwwroot/index.php?s=", //当前项目地址
-		"PUBLIC" : "/wwwroot/Public", //项目公共目录地址
-		"DEEP"   : "<?php echo C('URL_PATHINFO_DEPR');?>", //PATHINFO分割符
-		"MODEL"  : ["<?php echo C('URL_MODEL');?>", "<?php echo C('URL_CASE_INSENSITIVE');?>", "<?php echo C('URL_HTML_SUFFIX');?>"],
-		"VAR"    : ["<?php echo C('VAR_MODULE');?>", "<?php echo C('VAR_CONTROLLER');?>", "<?php echo C('VAR_ACTION');?>"]
-	}
-})();
-</script>
- <!-- 用于加载js代码 -->
-<!-- 页面footer钩子，一般用于加载插件JS文件和JS代码 -->
-<?php echo hook('pageFooter', 'widget');?>
-<div class="hidden"><!-- 用于加载统计代码等隐藏元素 -->
-	
-</div>
-
-	<!-- /底部 -->
 </body>
 </html>

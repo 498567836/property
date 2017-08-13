@@ -9,15 +9,27 @@ namespace Admin\Controller;
 class RepairController extends AdminController {
 
     public function index(){
-        $pid = I('get.pid', 0);
-        /* 获取频道列表 */
-        $map  = array('status' => array('gt', -1), 'pid'=>$pid);
-        $list = M('Repair')->where($map)->order('sort asc,id asc')->select();
-        $this->assign('status', [1=>'未处理',2=>'处理中',3=>'已处理']);
-        $this->assign('list', $list);
-        $this->assign('pid', $pid);
+
+        $Repair = M('Repair'); // 实例化Repair对象
+// 进行分页数据查询 注意page方法的参数的前面部分是当前的页数使用 $_GET[p]获取
+        $list = $Repair->where('status=1')->order('create_time')->page($_GET['p'].',4')->select();
+        $this->assign('list',$list);// 赋值数据集
+        $count      = $Repair->where('status=1')->count();// 查询满足要求的总记录数
+        $Page       = new \Think\Page($count,4);// 实例化分页类 传入总记录数和每页显示的记录数
+        $show       = $Page->show();// 分页显示输出
+        $this->assign('page',$show);// 赋值分页输出
         $this->meta_title = '物业管理首页';
-        $this->display();
+        $this->display(); // 输出模板
+
+//        $pid = I('get.pid', 0);
+//        /* 获取频道列表 */
+//        $map  = array('status' => array('gt', -1), 'pid'=>$pid);
+//        $list = M('Repair')->where($map)->order('sort asc,id asc')->select();
+//        $this->assign('status', [1=>'未处理',2=>'处理中',3=>'已处理']);
+//        $this->assign('list', $list);
+//        $this->assign('pid', $pid);
+
+//        $this->display();
     }
     /**
      * 文档新增页面初始化
